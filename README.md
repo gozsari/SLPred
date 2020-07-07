@@ -45,7 +45,7 @@ LKGLRSATTPGNSKYKEKLVLVVFDLKTGSLYDNQANDAGKKLAKNLLQHYWNNGNNGGR
 ## Explanation of Parameters
 * **--file**: this is the file name of the fasta file. For example if fasta file name is **input.fasta**, this argument must be just **input**
 
-### To run SLPred the command is as follows:
+### The command to run SLPred is as follows:
 ```
 python run_SLPred.py --file input 
 ```
