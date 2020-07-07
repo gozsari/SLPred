@@ -42,8 +42,9 @@ pip install -r requirements.txt
 python run_SLPred.py --file input 
 ```
 ## Output file
+
 * The results (predictions) will be located under **predictions** folder with the name: **input_predictions.csv**
-* If the prediction is positive there is 1, negative 0 for the corresponding location in the **.csv** file
+* The prediction is indicated with 1 (positive) and 0 (negative) for the corresponding location in the **.csv** file
 
 ## License
 
