@@ -27,8 +27,18 @@ conda install -r requirements.txt
 * **cd SLPred/ncbi-blast** (navigate ncbi-blast folder which is aldready inside SLPred)
 * **chmod 777 psiblast** (give necessary permissions to use psiblast command inside the code)
 * **cd ..** (navigate back to SLPred folder)
+* Put the fasta file (that you want to take predictions) under the folder **fasta_files**. Fasta file may contain any number of sequences. 
 * Run **run_SLPred.py** script as shown below 
+## Fasta file format
 
+```
+>sp|A9WZ33|14KL_BRUSI
+MNSFRKTCAGALALIFGATSIVPTVAAPMNMDRPAINQNVIQARAHYRPQNYNRGHRPGY
+WHGHRGYRHYRHGYRRHNDGWWYPLAAFGAGAIIGGAISQPRPVYRAPAGSPHVQWCYSR
+YKSYRASDNTFQPYNGPRKQCRSPYSR
+>sp|C0JAT6|A1H3_LOXHI Dermonecrotic toxin LhSicTox-alphaIA1iii (Fragment) OS=Loxosceles hirsuta OX=571525 PE=2 SV=1
+WIMGHMVNAIGQIDEFVNLGANSIETDVSFDSSANPEYTYHGIPCDCGRNCKKWENFNDF
+```
 ## Explanation of Parameters
 * **--file**: this is the file name of the fasta file. For example if fasta file name is **input.fasta**, this argument must be just **input**
 
