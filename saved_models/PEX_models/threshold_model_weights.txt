@@ -1,8 +1,0 @@
-Threshold: 0.67
-smoothed_pssm-StandardScaler: 0.43
-eedp-MinMaxScaler: 0.41
-pssm_cc-PowerTransformer: 0.26
-APAAC-RobustScaler: 0.26
-SPMAP-MinMaxScaler: 0.59
-medp-StandardScaler: 0.48
-CTDD-MinMaxScaler: 0.25
