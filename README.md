@@ -29,7 +29,7 @@ pip install -r requirements.txt
 * **cd ..** (navigate back to SLPred folder)
 * Put the fasta file (that you want to take predictions) under the folder **input_files/fasta_files**. Fasta file may contain any number of sequences. 
 
-## Input file format
+## Input file 
 * The input file must be located under **input_files/fasta_files** folder.
 * It must be in fasta format
 * A sample is also given as **input_files/fasta_files/input.fasta**
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ```
 python run_SLPred.py --file input 
 ```
-## The output file
+## Output file
 * The results (predictions) will be located under **predictions** folder with the name: **input_predictions.csv**
 * If the prediction is positive there is 1, negative 0 for the corresponding location in the **.csv** file
 
