@@ -30,7 +30,9 @@ conda install -r requirements.txt
 * Put the fasta file (that you want to take predictions) under the folder **fasta_files**. Fasta file may contain any number of sequences. 
 * Run **run_SLPred.py** script as shown below 
 ## Fasta file format
-
+* It should start with **>sp|**, then **protein id** must follow.
+* The following line or lines must be protein sequence.
+* A sample is also given as **fasta_files/input.fasta**
 ```
 >sp|A9WZ33|14KL_BRUSI
 MNSFRKTCAGALALIFGATSIVPTVAAPMNMDRPAINQNVIQARAHYRPQNYNRGHRPGY
