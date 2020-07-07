@@ -10,4 +10,5 @@
 ![alt text](https://github.com/gozsari/SLPred/blob/master/images/model_architecture.png)
 
 * The following figure shows the subcellular location and their groups.
+* This mapping is formed by considering is a and part of relations in the subcellular location hierarchy.
 ![alt text](https://github.com/gozsari/SLPred/blob/master/images/subcellular_locations.png)
