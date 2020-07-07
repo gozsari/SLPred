@@ -50,7 +50,7 @@ LKGLRSATTPGNSKYKEKLVLVVFDLKTGSLYDNQANDAGKKLAKNLLQHYWNNGNNGGR
 python run_SLPred.py --file input 
 ```
 
-* The results (predictions) will be located under **predictions** folder with the name: **input_predictions.csv**
+### The results (predictions) will be located under **predictions** folder with the name: **input_predictions.csv**
 
 ## License
 
