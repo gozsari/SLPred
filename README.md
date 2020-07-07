@@ -27,12 +27,12 @@ pip install -r requirements.txt
 * **cd SLPred/ncbi-blast** (navigate ncbi-blast folder which is aldready inside SLPred)
 * **chmod 777 psiblast** (give necessary permissions to use psiblast command inside the code)
 * **cd ..** (navigate back to SLPred folder)
-* Put the fasta file (that you want to take predictions) under the folder **fasta_files**. Fasta file may contain any number of sequences. 
+* Put the fasta file (that you want to take predictions) under the folder **input_files/fasta_files**. Fasta file may contain any number of sequences. 
 
 ## Fasta file format
 * It should start with **>sp|**, then **protein id** must follow.
 * The following line or lines must be protein sequence.
-* A sample is also given as **fasta_files/input.fasta**
+* A sample is also given as **input_files/fasta_files/input.fasta**
 ```
 >sp|A9WZ33|14KL_BRUSI
 MNSFRKTCAGALALIFGATSIVPTVAAPMNMDRPAINQNVIQARAHYRPQNYNRGHRPGY
