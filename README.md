@@ -21,3 +21,10 @@ conda install -r requirements.txt
 
 ## How to run SLPred to obtain the predictions 
 
+* Clone the Git Repository
+* Download Trust dataset (the dataset we created for training)
+* Download saved models (these are the pre-trained models)
+* cd SLPred/ncbi-blast (navigate ncbi-blast folder which is aldready inside SLPred)
+* chmod 777 psiblast (give necessary permissions to use psiblast command inside the code)
+* cd .. (navigate back to SLPred folder)
+* Run **run_SLPred.py** script as shown below 
