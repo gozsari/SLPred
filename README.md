@@ -22,8 +22,8 @@ pip install -r requirements.txt
 ## How to run SLPred to obtain the predictions 
 
 * Clone the Git Repository
-* Download Trust dataset (the dataset we created for training)
-* Download saved models (these are the pre-trained models)
+* Download Trust dataset (the dataset we created for training) [here](https://drive.google.com/drive/folders/1v2TuTecTUhvL4jqtGlfVPUgEfRihNXnl)
+* Download saved models (these are the pre-trained models) [here](https://drive.google.com/drive/folders/1jxAYsln7aJUX8xbLlcq5uaFGg5Q-aGUF)
 * **cd SLPred/ncbi-blast** (navigate ncbi-blast folder which is aldready inside SLPred)
 * **chmod 777 psiblast** (give necessary permissions to use psiblast command inside the code)
 * **cd ..** (navigate back to SLPred folder)
