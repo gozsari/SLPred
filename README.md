@@ -30,7 +30,7 @@ pip install -r requirements.txt
 * Put the fasta file (that you want to take predictions) under the folder **input_files/fasta_files**. Fasta file may contain any number of sequences. 
 
 ## Fasta file format
-* It should start with **>**, then **protein id** must follow.
+* It should start with **>identifier for database|**, then **protein id** must follow.
 * The following line or lines must be protein sequence.
 * A sample is also given as **input_files/fasta_files/input.fasta**
 ```
