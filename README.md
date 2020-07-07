@@ -29,19 +29,11 @@ pip install -r requirements.txt
 * **cd ..** (navigate back to SLPred folder)
 * Put the fasta file (that you want to take predictions) under the folder **input_files/fasta_files**. Fasta file may contain any number of sequences. 
 
-## Fasta file format
-* It should start with **>identifier for database|**, then **protein id** must follow.
-* The following line or lines must be protein sequence.
+## Input file 
+* The input file must be located under **input_files/fasta_files** folder.
+* It must be in fasta format
 * A sample is also given as **input_files/fasta_files/input.fasta**
-```
->sp|A9WZ33|14KL_BRUSI
-MNSFRKTCAGALALIFGATSIVPTVAAPMNMDRPAINQNVIQARAHYRPQNYNRGHRPGY
-WHGHRGYRHYRHGYRRHNDGWWYPLAAFGAGAIIGGAISQPRPVYRAPAGSPHVQWCYSR
-YKSYRASDNTFQPYNGPRKQCRSPYSR
->sp|C0JAT6|A1H3_LOXHI 
-WIMGHMVNAIGQIDEFVNLGANSIETDVSFDSSANPEYTYHGIPCDCGRNCKKWENFNDF
-LKGLRSATTPGNSKYKEKLVLVVFDLKTGSLYDNQANDAGKKLAKNLLQHYWNNGNNGGR
-```
+
 ## Explanation of Parameters
 * **--file**: this is the file name of the fasta file. For example if fasta file name is **input.fasta**, this argument must be just **input**
 
@@ -49,8 +41,10 @@ LKGLRSATTPGNSKYKEKLVLVVFDLKTGSLYDNQANDAGKKLAKNLLQHYWNNGNNGGR
 ```
 python run_SLPred.py --file input 
 ```
+## Output file
 
 * The results (predictions) will be located under **predictions** folder with the name: **input_predictions.csv**
+* The prediction is indicated with 1 (positive) and 0 (negative) for the corresponding location in the output file
 
 ## License
 
