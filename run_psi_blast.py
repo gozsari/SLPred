@@ -1,4 +1,5 @@
 import os
+import platform
 
 def form_single_fasta_files(filename):
     if os.path.isdir("input_files") == False:
@@ -26,6 +27,14 @@ def form_pssm_files(filename2):
             if os.path.isdir("input_files/pssm_files") == False:
                 os.mkdir("input_files/pssm_files")
             pssmfile = "{}/{}/{}.pssm".format("input_files", "pssm_files", filename.split(".")[0].strip())
-            os.system("{}/psiblast -db {}/uniref50_db/uniref50.blastdb -evalue 0.001 -query {} "
-                          "-out_ascii_pssm {}  -out outfile -num_iterations 3 -comp_based_stats 1"\
+            if ("Linux" in str(platform.platform())):
+                os.system("{}/psiblast -db {}/uniref50_db/uniref50.blastdb -evalue 0.001 -query {} "
+                              "-out_ascii_pssm {}  -out outfile -num_iterations 3 -comp_based_stats 1"\
                       .format(path_blast, path_blast, inputfile, pssmfile))
+            elif ("Darwin" in str(platform.platform())):
+                print("{}/psiblastMAC -db {}/uniref50_db/uniref50.blastdb -evalue 0.001 -query {} "
+                          "-out_ascii_pssm {}  -out outfile -num_iterations 3 -comp_based_stats 1" \
+                          .format(path_blast, path_blast, inputfile, pssmfile))
+                os.system("{}/psiblastMAC -db {}/uniref50_db/uniref50.blastdb -evalue 0.001 -query {} "
+                          "-out_ascii_pssm {}  -out outfile -num_iterations 3 -comp_based_stats 1" \
+                          .format(path_blast, path_blast, inputfile, pssmfile))
