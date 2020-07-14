@@ -1,5 +1,5 @@
 fastaDict={}
-MIN_SEQUENCE_LENGTH = 20
+MIN_SEQUENCE_LENGTH = 0
 def readFasta(fileName):
     with open(fileName) as fp:
         protId = ''
@@ -11,9 +11,8 @@ def readFasta(fileName):
                         sequence = sequence.replace("U", "C")
                     fastaDict[protId] = sequence
                 sequence = ''
-                #protId = line[1:].strip()
-                firstLine = line.split("|")
-                protId = firstLine[1].strip()
+                protId = line[1:].strip()
+                
                 continue
             line = line.strip()
             sequence = sequence + line
