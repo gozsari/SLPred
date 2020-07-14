@@ -21,20 +21,20 @@ pip install -r requirements.txt
 
 ## How to run SLPred to obtain the predictions 
 
-* Clone the Git Repository
-* Download Trust dataset (the dataset we created for training) [here](https://drive.google.com/file/d/1m9UpPMkw9XkPzabjURU4bPbFcPKorElP/view?usp=sharing) and extract it to **SLPred** folder. The name of the folder should be **Trust_all_data**
-* Download saved models (these are the pre-trained models) [here](https://drive.google.com/file/d/1Pvg-ev_oMvu6W-z8AjJc45-cBQ5zstmb/view?usp=sharing) and extract it to **SLPred** folder. The name of the folder should be **saved_models**.
-* **cd SLPred/ncbi-blast** (navigate ncbi-blast folder which is aldready inside SLPred)
-* **chmod 777 psiblast** (give necessary permissions to use psiblast command inside the code)
-* **cd ..** (navigate back to SLPred folder)
+## Preparation to run SLPred
 
-## Input file 
+* Clone the Git Repository
+* In terminal or command line navigate into SLPred folder
+* Then run **chmod +x download_extract_data.sh** command
+* Finally run **./download_extract_data.sh** command
+
+### Input file 
 
 * The input file must be located under **input_files/fasta_files** folder.
 * It must be in fasta format
 * A sample is also given as **input_files/fasta_files/input.fasta**
 
-## Explanation of Parameters
+##3 Explanation of Parameters
 
 * **--file**: this is the file name of the fasta file. For example if fasta file name is **input.fasta**, this argument must be just **input**
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```
 python run_SLPred.py --file input 
 ```
-## Output file
+### Output file
 
 * The results (predictions) will be located under **predictions** folder with the name: **input_predictions.csv**
 * The prediction is indicated with 1 (positive) and 0 (negative) for the corresponding location in the output file
