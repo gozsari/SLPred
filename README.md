@@ -11,7 +11,7 @@
 
 ## Installation
 
-SLPred is a command-line prediction tool written in Python 3.7.1. SLPred was developed and tested in Ubuntu 20.04 LTS. Please make sure that you have **Anaconda** installled on  your computer and  run the below commands to install requirements. Dependencies are available in requirements.txt file.
+SLPred is a command-line prediction tool written in Python 3.7.1. SLPred was developed and tested in Ubuntu 20.04 LTS. Please make sure that you have **Anaconda** installed on  your computer and  run the below commands to install requirements. Dependencies are available in requirements.txt file.
 
 ```
 conda create -n slpred_env python=3.7
