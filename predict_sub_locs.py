@@ -89,7 +89,7 @@ def read_prot_id_from_fasta(file_name):
     with open("input_files/fasta_files/{}.fasta".format(file_name), "r") as fp:
         for line in fp:
             if line[0] == ">":
-                test_prot_id_list.append(line.split("|")[1].strip())
+                test_prot_id_list.append(line.strip()[1:])
     return test_prot_id_list
 
 def predict_sub_locs(feature_directory, file_name):
