@@ -26,3 +26,6 @@ fi
 echo "Extracting Trust data..."
 unzip Trust_all_data.zip
 echo "Trust data extraction completed!."
+
+rm saved_models.zip
+rm Trust_all_data.zip
