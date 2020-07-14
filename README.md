@@ -24,9 +24,13 @@ pip install -r requirements.txt
 ## Preparation to run SLPred
 
 * Clone the Git Repository
-* In terminal or command line navigate into SLPred folder
-* Then run **chmod +x download_extract_data.sh** command
-* Finally run **./download_extract_data.sh** command
+* In terminal or command line navigate into **SLPred** folder
+* Then run the following commands
+
+```
+chmod +x download_extract_data.sh
+./download_extract_data.sh
+```
 
 ### Input file 
 
@@ -34,7 +38,7 @@ pip install -r requirements.txt
 * It must be in fasta format
 * A sample is also given as **input_files/fasta_files/input.fasta**
 
-##3 Explanation of Parameters
+### Explanation of Parameters
 
 * **--file**: this is the file name of the fasta file. For example if fasta file name is **input.fasta**, this argument must be just **input**
 
