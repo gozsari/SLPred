@@ -1,7 +1,7 @@
 # SLPred: a multi-view subcellular localization prediction tool for human proteins
 * SLPred is a multi-view subcellular localization prediction tool for human proteins.
 * The tool consists of nine independently developed model for the proteins which have annotation with nine subcellular locations: **Cytoplasm, Nucleus, Cell Membrane, Mitochondrion, Secreted, Endoplasmic reticulum, Golgi apparatus, Lysosome and Peroxisome.** 
-* SLPred exploits the features of nineteen different protein descriptors from the publicly available tools: POSSUM, iFeature and SPMAP.
+* SLPred exploits the features of forty different protein descriptors from the publicly available tools: POSSUM, iFeature and SPMAP.
 * Support Vector Machine (SVM) is used to construct probabilistic prediction models, which produces probabilistic scores indicating the localization probability for a query protein sequence. 
 * A weighted score is calculated based on the obtained probabilistic scores from seven feature-based probabilistic prediction models (SVMs) by employing weighted mean voting.
 * Binary prediction is given by applying thresholding on the weighted score.
@@ -11,7 +11,7 @@
 
 ## Installation
 
-SLPred is a command-line prediction tool written in Python 3.7.1. SLPred was developed and tested in Ubuntu 20.04 LTS. Please run the below commands to install requirements. Dependencies are available in requirements.txt file.
+SLPred is a command-line prediction tool written in Python 3.7.1. SLPred was developed and tested in Ubuntu 20.04 LTS. Please make sure that you have **Anaconda** installed on  your computer and  run the below commands to install requirements. Dependencies are available in requirements.txt file.
 
 ```
 conda create -n slpred_env python=3.7
@@ -22,8 +22,8 @@ pip install -r requirements.txt
 ## How to run SLPred to obtain the predictions 
 
 * Clone the Git Repository
-* Download Trust dataset (the dataset we created for training) [here](https://drive.google.com/file/d/1m9UpPMkw9XkPzabjURU4bPbFcPKorElP/view?usp=sharing)
-* Download saved models (these are the pre-trained models) [here](https://drive.google.com/file/d/1AjZotfRSZkzovtLLmGpdfspQaI0b38x4/view?usp=sharing)
+* Download Trust dataset (the dataset we created for training) [here](https://drive.google.com/file/d/1m9UpPMkw9XkPzabjURU4bPbFcPKorElP/view?usp=sharing) and extract it to **SLPred** folder. The name of the folder should be **Trust_all_data**
+* Download saved models (these are the pre-trained models) [here](https://drive.google.com/file/d/1Pvg-ev_oMvu6W-z8AjJc45-cBQ5zstmb/view?usp=sharing) and extract it to **SLPred** folder. The name of the folder should be **saved_models**.
 * **cd SLPred/ncbi-blast** (navigate ncbi-blast folder which is aldready inside SLPred)
 * **chmod 777 psiblast** (give necessary permissions to use psiblast command inside the code)
 * **cd ..** (navigate back to SLPred folder)
