@@ -29,7 +29,7 @@ def POSSUM_feature_extracter(filename, path2):
         os.mkdir("{}/POSSUM_descriptors_results".format(path2))
     for possum_descr in POSSUM_descriptor_list:
         print("POSSUM extracting {} features".format(possum_descr))
-        os.system("python2 POSSUM_Standalone_Toolkit/src/possum.py -i input_files/fasta_files/{}.fasta"\
+        os.system("python3 POSSUM_Standalone_Toolkit/src/possum.py -i input_files/fasta_files/{}.fasta"\
                   " -o {}/POSSUM_descriptors_results/{}_{}.txt -t {} -p input_files/pssm_files".format(filename,path2, filename, possum_descr, possum_descr))
 
 def SpMap_feature_extracter(filename, path2):

@@ -3,13 +3,13 @@
 # Authors: Chris (chris@nohup.cc) & Young (young@nohup.cc)
 
 def usage():
-    print "possum.py usage:"
-    print "python possum.py <options> <source files> "
-    print "-i,--input: input a file in fasta format."
-    print "-o,--ouput: output a file of the generated feature."
-    print "-t,--type: specify a feature encoding algorithm."
-    print "-p,--pssmdir: specify the directory of pssm files."
-    print "-h,--help: show the help information."
+    print("possum.py usage:")
+    print("python possum.py <options> <source files> ")
+    print("-i,--input: input a file in fasta format.")
+    print("-o,--ouput: output a file of the generated feature.")
+    print("-t,--type: specify a feature encoding algorithm.")
+    print("-p,--pssmdir: specify the directory of pssm files.")
+    print("-h,--help: show the help information.")
 
 import fileinput
 import sys, getopt
@@ -73,7 +73,9 @@ fastaDict = {}
 for fi in onlyfiles:
     cntnt = ''
     pssmContentMatrix=readToMatrix(fileinput.input(pssmdir+'/'+fi))
+    #print(pssmContentMatrix)
     pssmContentMatrix=np.array(pssmContentMatrix)
+    #print(pssmContentMatrix)
     sequence=pssmContentMatrix[:,0]
     seqLength=len(sequence)
     for i in range(seqLength):
@@ -89,7 +91,7 @@ for smp in smplist:
     #print "fastaDict[smp]="+fastaDict[smp]
     finalist.append(pssmdir+'/'+fastaDict[smp])
 
-file_out = file(outputFile,'w')
+file_out = open(outputFile,'w')
 
 for fi in finalist:
     #print "fi=" + fi
@@ -97,5 +99,6 @@ for fi in finalist:
     input_matrix=fileinput.input(fi)
     #output a feature vector
     #input_matrix=readToMatrix(input_matrix)
+    #print(input_matrix)
     feature_vector=calculateDescriptors(input_matrix, algoType, argument, veriable)
     np.savetxt(file_out, feature_vector, delimiter=",")

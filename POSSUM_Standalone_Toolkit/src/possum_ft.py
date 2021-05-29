@@ -22,8 +22,8 @@ def readToMatrix(input_matrix):
                 break
             str_vec.extend(overall_vec[1])
             if(len(overall_vec) < 44):
-                print "There is a mistake in the pssm file"
-                print "Try to correct it"
+                print("There is a mistake in the pssm file")
+                print("Try to correct it")
                 for cur_str in overall_vec[2:]:
                     str_vec.extend(p.findall(cur_str))
                     if(len(str_vec) >= 21):
@@ -34,7 +34,7 @@ def readToMatrix(input_matrix):
                             #print "Exit with an error"
                             exit(1)
                         break;
-                print "Done"
+                print("Done")
             else:
                 str_vec = strin.split()[1:42]
             if len(str_vec) == 0:

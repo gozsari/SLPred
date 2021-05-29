@@ -63,13 +63,13 @@ def window(PSSM, w_smth, w_slide):
 def pssm_smth(PSSM_orig, PSSM_smth, w_smth, l):
     for i in range(l):
         if i <(w_smth-1)/2:
-            for j in range(i+(w_smth-1)/2+1):
+            for j in range(i+int((w_smth-1)/2)+1):
                 PSSM_smth[i]+=PSSM_orig[j]
         elif i>=(l-(w_smth-1)/2):
-            for j in range(i-(w_smth-1)/2,l):
+            for j in range(i-int((w_smth-1)/2),l):
                 PSSM_smth[i]+=PSSM_orig[j]
         else:
-            for j in range(i-(w_smth-1)/2,i+(w_smth-1)/2+1):
+            for j in range(i-int((w_smth-1)/2),i+int((w_smth-1)/2)+1):
                 PSSM_smth[i]+=PSSM_orig[j]
     return PSSM_smth
 
@@ -85,16 +85,17 @@ def handleRows(PSSM, SWITCH, COUNT):
     '''
     # 0-19 represents amino acid 'ARNDCQEGHILKMFPSTWYV'
     Amino_vec = "ARNDCQEGHILKMFPSTWYV"
-
-    matrix_final = [ [0.0] * 20 ] * (COUNT/20)
+    c = COUNT/20
+    matrix_final = [ [0.0] * 20 ] * int(c)
     matrix_final=np.array(matrix_final)
+ 
     seq_cn = 0
 
     PSSM_shape=np.shape(PSSM)
     for i in range(PSSM_shape[0]):
         seq_cn += 1
         str_vec=PSSM[i]
-        str_vec_positive=map(int, str_vec[1:21])
+        str_vec_positive=list(map(int, str_vec[1:21]))
         str_vec_positive=np.array(str_vec_positive)
         if SWITCH==1:
             str_vec_positive[str_vec_positive<0]=0
@@ -104,15 +105,17 @@ def handleRows(PSSM, SWITCH, COUNT):
         #print "str_vec_positive="
         #print str_vec_positive
         if COUNT==20:
-            matrix_final[0]=map(sum, zip(str_vec_positive, matrix_final[0]))
+            
+            matrix_final[0]=list(map(sum, list(zip(str_vec_positive, matrix_final[0]))))
         elif COUNT==400:
-            matrix_final[Amino_vec.index(str_vec[0])] = map(sum, zip(str_vec_positive, matrix_final[Amino_vec.index(str_vec[0])]))
+            
+            matrix_final[Amino_vec.index(str_vec[0])] = list(map(sum, list(zip(str_vec_positive, matrix_final[Amino_vec.index(str_vec[0])]))))
 
         #print "matrix_final="
         #print matrix_final
 
     return matrix_final
-
+    
 def preHandleColumns(PSSM,STEP,PART,ID):
     '''
     if STEP=k, we calculate the relation betweem one residue and the kth residue afterward.
@@ -192,7 +195,7 @@ def handleMixed(PSSM,ALPHA):
     seq_cn=np.shape(PSSM)[0]
     for i in range(seq_cn):
         #print PSSM_norm[i]
-        row1=map(sum, zip(row1, PSSM_norm[i]))
+        row1=list(map(sum, list(zip(row1, PSSM_norm[i]))))
     #print row1
     row1=np.divide(row1,seq_cn)
 
@@ -263,7 +266,7 @@ def handleMixed3(PSSM):
     row2=[0.0] * 10
     row=np.array(row)
     row1=np.array(row1)
-    row2=np.array(row2)
+    row2=np.array(row2, dtype='float')
 
     seq_cn=np.shape(PSSM)[0]
     Amino_vec = "ARNDCQEGHILKMFPSTWYV"
@@ -275,13 +278,13 @@ def handleMixed3(PSSM):
     PSSM=np.array(PSSM)
     #print "PSSM="
     #print PSSM
-    RPSSM[:,0]=np.divide(map(sum,zip(PSSM[:,13],PSSM[:,17],PSSM[:,18])), 3.0)
-    RPSSM[:,1]=np.divide(map(sum,zip(PSSM[:,10],PSSM[:,12])), 2.0)
-    RPSSM[:,2]=np.divide(map(sum,zip(PSSM[:,9],PSSM[:,19])), 2.0)
-    RPSSM[:,3]=np.divide(map(sum,zip(PSSM[:,0],PSSM[:,15],PSSM[:,16])), 3.0)
-    RPSSM[:,4]=np.divide(map(sum,zip(PSSM[:,2],PSSM[:,8])), 2.0)
-    RPSSM[:,5]=np.divide(map(sum,zip(PSSM[:,5],PSSM[:,6],PSSM[:,3])), 3.0)
-    RPSSM[:,6]=np.divide(map(sum,zip(PSSM[:,1],PSSM[:,11])), 2.0)
+    RPSSM[:,0]=np.divide(list(map(sum,list(zip(PSSM[:,13],PSSM[:,17],PSSM[:,18])))), 3.0)
+    RPSSM[:,1]=np.divide(list(map(sum,list(zip(PSSM[:,10],PSSM[:,12])))), 2.0)
+    RPSSM[:,2]=np.divide(list(map(sum,list(zip(PSSM[:,9],PSSM[:,19])))), 2.0)
+    RPSSM[:,3]=np.divide(list(map(sum,list(zip(PSSM[:,0],PSSM[:,15],PSSM[:,16])))), 3.0)
+    RPSSM[:,4]=np.divide(list(map(sum,list(zip(PSSM[:,2],PSSM[:,8])))), 2.0)
+    RPSSM[:,5]=np.divide(list(map(sum,list(zip(PSSM[:,5],PSSM[:,6],PSSM[:,3])))), 3.0)
+    RPSSM[:,6]=np.divide(list(map(sum,list(zip(PSSM[:,1],PSSM[:,11])))), 2.0)
     RPSSM[:,7]=PSSM[:,4]
     RPSSM[:,8]=PSSM[:,7]
     RPSSM[:,9]=PSSM[:,14]

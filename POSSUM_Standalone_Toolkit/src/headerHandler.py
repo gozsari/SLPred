@@ -3,13 +3,13 @@
 # Authors: Chris (chris@nohup.cc) & Young (young@nohup.cc)
 
 def usage():
-    print "headerHandler.py usage:"
-    print "python headerHandler.py <options> <source files> "
-    print "-i,--input: input raw feature file without header."
-    print "-o,--ouput: output feature file with header."
-    print "-p,--prefix: input the prefix of header."
-    print "-n,--number: input the number of columns"
-    print "-h,--help: show the help information."
+    print("headerHandler.py usage:")
+    print("python headerHandler.py <options> <source files> ")
+    print("-i,--input: input raw feature file without header.")
+    print("-o,--ouput: output feature file with header.")
+    print("-p,--prefix: input the prefix of header.")
+    print("-n,--number: input the number of columns")
+    print("-h,--help: show the help information.")
 
 import re
 import pandas as pd
