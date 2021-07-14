@@ -16,7 +16,6 @@ SLPred is a command-line prediction tool written in Python 3.7.1. SLPred was dev
 ```
 conda create -n slpred_env python=3.7
 conda activate slpred_env
-
 ```
 
 ## How to run SLPred to obtain the predictions 
