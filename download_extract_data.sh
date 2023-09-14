@@ -10,13 +10,13 @@ if [ -f saved_models.zip ]; then
 else
 	echo "Downloading saved models"
         if [ -x "$(which wget)" ] ; then
-	    wget --no-check-certificate -r 'https://docs.google.com/uc?export=download&id=1Pvg-ev_oMvu6W-z8AjJc45-cBQ5zstmb' -O saved_models.zip
+	    wget --no-check-certificate -r 'https://slpred.kansil.org/saved_models.zip' -O saved_models.zip
 	    echo "Saved models download completed!"
 	    echo "Extracting saved models..."
             unzip saved_models.zip
             echo "Saved models extraction completed!."
 	elif [ -x "$(which curl)" ] ; then
-	    curl 'https://docs.google.com/uc?export=download&id=1Pvg-ev_oMvu6W-z8AjJc45-cBQ5zstmb' -O saved_models.zip
+	    curl 'https://slpred.kansil.org/saved_models.zip' -O saved_models.zip
 	    echo "Saved models download completed!"
 	    echo "Extracting saved models..."
             unzip saved_models.zip
