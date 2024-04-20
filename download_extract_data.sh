@@ -5,6 +5,10 @@ chmod 777 psiblastMAC
 cd ..
 
 
+#!/bin/sh
+
+
+
 if [ -f saved_models.zip ]; then
 	echo "Aldready downloaded saved models!"
 else
@@ -35,13 +39,13 @@ if [ -f Trust_all_data.zip ]; then
 else
 	echo "Downloading Trust data"
 	if [ -x "$(which wget)" ] ; then
-	    wget --no-check-certificate -r 'https://docs.google.com/uc?export=download&id=1m9UpPMkw9XkPzabjURU4bPbFcPKorElP' -O Trust_all_data.zip
+	    wget --no-check-certificate -r 'https://slpred.kansil.org/Trust_all_data.zip' -O Trust_all_data.zip
 	    echo "Trust data download completed!"
 	    echo "Extracting Trust data..."
             unzip Trust_all_data.zip
             echo "Trust data extraction completed!."
 	elif [ -x "$(which curl)" ] ; then
-	    curl 'https://docs.google.com/uc?export=download&id=1m9UpPMkw9XkPzabjURU4bPbFcPKorElP' -O Trust_all_data.zip
+	    curl 'https://slpred.kansil.org/Trust_all_data.zip' -O Trust_all_data.zip
 	    echo "Trust data download completed!"
 	    echo "Extracting Trust data..."
             unzip Trust_all_data.zip
@@ -52,8 +56,3 @@ else
 	fi
         
 fi
-
-
-
-
-
